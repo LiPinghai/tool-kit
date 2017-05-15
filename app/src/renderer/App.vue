@@ -60,7 +60,8 @@
    display: inline-block;
    position: relative;
    height: 100%;
-   overflow: scroll;
+   overflow-y: auto;
+   overflow-x: hidden;
    width: 150px;
    background: #324157;
  }

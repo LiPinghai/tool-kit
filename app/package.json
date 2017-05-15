@@ -10,6 +10,5 @@
     "vue-resource": "^1.0.3",
     "vue-router": "^2.1.2"
   },
-  "devDependencies": {},
   "author": "李平海 <iq1999999@qq.com>"
 }

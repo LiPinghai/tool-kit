@@ -1,9 +1,6 @@
-
 logs
 *.log
-
 node_modules
-
 builds
-
+dist
 .npm
