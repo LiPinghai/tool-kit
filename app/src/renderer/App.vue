@@ -1,16 +1,16 @@
 <template>
   <div id="app">
     <div id="nav" >
-      <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" theme="dark">
+      <el-menu default-active="2" router="true" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" theme="dark">
         <el-submenu index="1">
           <template slot="title">最近用过</template>
-          <el-menu-item index="1-1">JSON转换</el-menu-item>
+          <el-menu-item index="Json">JSON转换</el-menu-item>
         </el-submenu>
         <el-submenu index="2">
           <template slot="title">转码</template>
-          <el-menu-item index="2-1">JSON转换</el-menu-item>
+          <el-menu-item index="json">JSON转换</el-menu-item>
           <el-menu-item index="2-2">base64转换</el-menu-item>
-          <el-menu-item index="2-3">UrlEn/Decode</el-menu-item>
+          <el-menu-item index="urlencode">UrlEn/Decode</el-menu-item>
           <el-menu-item index="2-4">MD5</el-menu-item>
           <el-menu-item index="2-5">unicode</el-menu-item>
         </el-submenu>

@@ -1,5 +1,5 @@
 <template>
-  <div id="json">
+  <div id="url-encode">
     <el-alert
       v-show="showAlert"
       title="格式有误"
@@ -7,36 +7,32 @@
       type="error">
     </el-alert>
    <el-row>
-      <el-col class="label" :span="4">
-          JSON
-      </el-col>
-      <el-col :span="20">
+      <el-col :span="24">
         <el-input
           type="textarea"
           :rows="8"
-          v-model="json"
+          v-model="input"
           placeholder="请输入内容">
         </el-input>
       </el-col>
     </el-row>
     <el-row class="button-wrap">
-      <el-col :offset="4" :span="20">
-        <el-button type="primary" @click="json2xml">
-          <i class="el-icon-caret-bottom"></i>
+      <el-col :span="24">
+        <el-button type="primary" @click="encode">
+          encode
         </el-button>
-        <el-button type="primary" @click="xml2json" >
-          <i class="el-icon-caret-top"></i>
+        <el-button type="primary" @click="decode" >
+          decode
         </el-button>
       </el-col>
     </el-row>
     <el-row>
-      <el-col :span="4">XML</el-col>
-      <el-col :span="20">
+      <el-col :span="24">
         <el-input
           type="textarea"
           :rows="8"
-          v-model="xml"
-          placeholder="请输入内容"
+          v-model="output"
+          placeholder="转换结果"
         >
         </el-input>
       </el-col>
@@ -52,35 +48,33 @@
     },
     data(){
       return {
-        json: '',
-        xml: '',
+        input: '',
+        output: '',
         showAlert: false
       }
     },
 
     methods:{
-      json2xml(){
-        console.log('json2xml')
-        console.log(this.json)
-        try{
-        this.xml = json2xmlParser(JSON.parse(this.json))
-        }catch(e){
-          this.showAlert = true;
-        }
+      encode(){
+        this.output = encodeURIComponent(this.input)
       },
-      xml2json(){
-        this.json = convert.xml2json(this.xml,{compact: true})
+      decode(){
+        try{
+          this.output = decodeURIComponent(this.input)
+        }catch(e){
+          this.showAlert = true
+        }
       },
       hideAlert(){
           this.showAlert = false
       }
     },
-    name: 'Json'
+    name: 'urlencode'
   }
 </script>
 
 <style lang="scss" scoped>
-#json{
+#url-encode{
   position: absolute;
   box-sizing: border-box;
   padding: 20px;

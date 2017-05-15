@@ -4,6 +4,11 @@ export default [{
     component: require('components/Json')
   },
   {
+    path: '/urlencode',
+    name: 'urlencode',
+    component: require('components/UrlEncode')
+  },
+  {
     path: '*',
     redirect: '/'
   }
